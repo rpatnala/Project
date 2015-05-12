@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.msit.material.SubActivity"
+    android:weightSum="1">
+
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <EditText
+        android:layout_below="@+id/app_bar"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="textPersonName"
+        android:id="@+id/pname"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        android:hint="@string/profile"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:editable="true"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Ringer Volume"
+        android:id="@+id/ringer"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/pname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+    <SeekBar
+        android:layout_below="@+id/ringer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rseek"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Media Volume"
+        android:id="@+id/media"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/rseek"
+        android:layout_alignLeft="@+id/ringer"
+        android:layout_alignStart="@+id/ringer" />
+
+    <SeekBar
+        android:layout_below="@+id/media"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mseek"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Alarm Volume"
+        android:id="@+id/alarm"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/mseek"
+        android:layout_alignLeft="@+id/media"
+        android:layout_alignStart="@+id/media" />
+
+    <SeekBar
+        android:layout_below="@+id/alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aseek"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_below="@+id/aseek"
+        android:id="@+id/add_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/done_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.05"
+            android:background="#000000"
+            android:text="Done"
+            android:textColor="#FFFFFF"
+            android:onClick="done_save"/>
+
+        <Button
+            android:id="@+id/done_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:onClick="done_cancel"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/add_view"
+        android:id="@+id/update_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/update_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="Save Updates"
+            android:textColor="#FFFFFF"
+            android:onClick="update_save"/>
+
+        <Button
+            android:id="@+id/update_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:onClick="update_cancel"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/rin"
+        android:layout_marginLeft="150dp"
+        android:layout_marginStart="79dp"
+        android:layout_alignTop="@+id/ringer"
+        android:layout_toRightOf="@+id/ringer"
+        android:layout_toEndOf="@+id/ringer" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/rmax"
+        android:layout_alignTop="@+id/rin"
+        android:layout_toRightOf="@+id/rin"
+        android:layout_toEndOf="@+id/rin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/med"
+        android:layout_above="@+id/mseek"
+        android:layout_toLeftOf="@+id/rmax"
+        android:layout_toStartOf="@+id/rmax" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/mmax"
+        android:layout_above="@+id/mseek"
+        android:layout_toRightOf="@+id/med"
+        android:layout_toEndOf="@+id/med" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/ala"
+        android:layout_above="@+id/aseek"
+        android:layout_toLeftOf="@+id/mmax"
+        android:layout_toStartOf="@+id/mmax" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/amax"
+        android:layout_above="@+id/aseek"
+        android:layout_toRightOf="@+id/ala"
+        android:layout_toEndOf="@+id/ala" />
+
+
+</RelativeLayout>
